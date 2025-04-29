@@ -1,0 +1,342 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('img1.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('img1.jpg');
+    /* The actual background should be a coastal scene with white buildings and palm trees against blue sea */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    background-image: url('img1.jpg');
+    /* This should be the same coastal scene image as the body background */
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+
+.booking-panel {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+
+.tab {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0a3b2c;
+    cursor: pointer;
+    padding: 10px 0;
+    text-align: center;
+    flex: 1;
+}
+
+.tab.active {
+    font-weight: 700;
+}
+
+.tab-indicator {
+    width: 188px;
+    height: 4px;
+    background-color: #0a3b2c;
+    margin-left: 40px;
+    margin-top: -10px;
+    margin-bottom: 30px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px 30px;
+    flex-wrap: wrap;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group.hotels {
+    width: 32%;
+}
+
+.input-group.dates {
+    width: 32%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-group.visitors {
+    width: 32%;
+}
+
+.date-input {
+    width: 48%;
+    position: relative;
+}
+
+input {
+    width: 100%;
+    padding: 15px 40px 15px 20px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    font-size: 1rem;
+    color: #0a3b2c;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+input::placeholder {
+    color: #c8a135;
+    font-weight: 500;
+}
+
+.input-group i, .date-input i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #c8a135;
+}
+
+.search-btn {
+    display: block;
+    width: 50%;
+    max-width: 400px;
+    margin: 0 auto 30px;
+    padding: 15px;
+    background-color: #0a3b2c;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 992px) {
+    .form-container {
+        flex-direction: column;
+    }
+    
+    .input-group.hotels,
+    .input-group.dates,
+    .input-group.visitors {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .tab-indicator {
+        width: 30%;
+    }
+    
+    .search-btn {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .tabs {
+        flex-direction: column;
+    }
+    
+    .tab {
+        margin-bottom: 10px;
+        text-align: left;
+    }
+    
+    .tab-indicator {
+        margin-top: -20px;
+    }
+}
+    
+.slide {
+    display: none;
+}
+.slide.active {
+    display: block;
+}
+
+.hotel-cards .card {
+    display: none;
+}
+.hotel-cards .card.active {
+    display: block;
+}
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hotel-card {
+    display: flex;
+    border: 2px solid #0a3b25;
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: white;
+    position: relative;
+}
+
+.hotel-image {
+    width: 380px;
+    height: 320px;
+    flex-shrink: 0;
+}
+
+.hotel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hotel-content {
+    flex-grow: 1;
+    padding: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.hotel-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #0a3b25;
+    margin-bottom: 10px;
+}
+
+.star-rating {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.star {
+    color: #ffc107;
+    font-size: 32px;
+    margin-right: 5px;
+}
+
+.price-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+.price-label {
+    font-size: 24px;
+    font-weight: 500;
+    margin-right: 20px;
+}
+
+.price-amount {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hotel-card {
+        flex-direction: column;
+    }
+    
+    .hotel-image {
+        width: 100%;
+        height: 250px;
+    }
+    
+    .hotel-content {
+        padding: 20px;
+    }
+    
+    .hotel-name {
+        font-size: 28px;
+    }
+    
+    .price-section {
+        justify-content: flex-start;
+    }
+
+    
+.navigation-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.navigation-buttons button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navigation-buttons button:hover {
+    background-color: #0056b3;
+}
+
+
+    
+    
+}

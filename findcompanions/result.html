@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Matches</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #f5f5dc, #e9e1c1);
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      color: #2e4a29;
+      margin-bottom: 30px;
+      font-size: 2em;
+      font-weight: 700;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.8s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      color: #2e4a29;
+    }
+
+    th {
+      background-color: #e9e1c1;
+      font-weight: 600;
+    }
+
+    td a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8em;
+      }
+
+      table, th, td {
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>People Going to <span id="placeName"></span></h1>
+  <div id="results"></div>
+
+  <script>
+    const destination = localStorage.getItem("searchDestination");
+    document.getElementById("placeName").textContent = destination;
+
+    fetch("get_matches.php?destination=" + encodeURIComponent(destination))
+      .then(response => response.json())
+      .then(data => {
+        const resultsDiv = document.getElementById("results");
+
+        if (data.length === 0) {
+          resultsDiv.innerHTML = `<p>No matches found for "${destination}". Try again later!</p>`;
+        } else {
+          const table = document.createElement("table");
+          const thead = document.createElement("thead");
+          thead.innerHTML = `
+            <tr>
+              <th>Name</th>
+              <th>Message</th>
+              <th>Contact</th>
+            </tr>`;
+          table.appendChild(thead);
+
+          const tbody = document.createElement("tbody");
+
+          data.forEach(person => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+              <td>${person.name}</td>
+              <td>${person.message}</td>
+              <td><a href="mailto:${person.email}">${person.email}</a></td>`;
+            tbody.appendChild(row);
+          });
+
+          table.appendChild(tbody);
+          resultsDiv.appendChild(table);
+        }
+      })
+      .catch(err => {
+        document.getElementById("results").innerHTML = `<p>Error loading results. Please try again.</p>`;
+        console.error(err);
+      });
+  </script>
+</body>
+</html>

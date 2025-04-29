@@ -1,0 +1,600 @@
+/* ========================================
+   1. Global Reset and Fonts
+======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.slide-1 {
+    background-image: url('img1.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.slide-2 {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+
+/* ========================================
+   2. Slide Visibility
+======================================== */
+.slide {
+    display: none;
+}
+.slide.active {
+    display: block;
+}
+
+/* ========================================
+   3. Slide 1: Booking Panel
+======================================== */
+header {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+
+.booking-panel {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+
+.tab {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0a3b2c;
+    cursor: pointer;
+    padding: 10px 0;
+    text-align: center;
+    flex: 1;
+}
+.tab.active {
+    font-weight: 700;
+}
+
+.tab-indicator {
+    width: 188px;
+    height: 4px;
+    background-color: #0a3b2c;
+    margin-left: 40px;
+    margin-top: -10px;
+    margin-bottom: 30px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px 30px;
+    flex-wrap: wrap;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group.hotels,
+.input-group.dates,
+.input-group.visitors {
+    width: 32%;
+}
+
+.input-group.dates {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-input {
+    width: 48%;
+    position: relative;
+}
+
+input {
+    width: 100%;
+    padding: 15px 40px 15px 20px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    font-size: 1rem;
+    color: #0a3b2c;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+input::placeholder {
+    color: #c8a135;
+    font-weight: 500;
+}
+
+.input-group i, .date-input i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #c8a135;
+}
+
+.search-btn {
+    display: block;
+    width: 50%;
+    max-width: 400px;
+    margin: 0 auto 30px;
+    padding: 15px;
+    background-color: #0a3b2c;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* ========================================
+   4. Slide 2: Hotel Cards
+======================================== */
+
+
+.hotel-cards .card {
+    display: none;
+  }
+  
+  .hotel-cards .card.active {
+    display: block;
+  }
+  
+.hotel-card {
+    background-color: white;
+    display: flex;
+    border: 2px solid #0a3b25;
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: white;
+    position: relative;
+}
+
+.hotel-image {
+    width: 380px;
+    height: 320px;
+    flex-shrink: 0;
+}
+
+.hotel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hotel-content {
+    flex-grow: 1;
+    padding: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.hotel-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #0a3b25;
+    margin-bottom: 10px;
+}
+
+.star-rating {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.star {
+    color: #ffc107;
+    font-size: 32px;
+    margin-right: 5px;
+}
+
+.price-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+.price-label {
+    font-size: 24px;
+    font-weight: 500;
+    margin-right: 20px;
+}
+
+.price-amount {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.payment-btn {
+    background-color: #002e1d; /* match your green color */
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 14px;
+    border-radius: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.payment-btn:hover {
+    background-color: #00432b; /* darker green on hover */
+}
+
+
+/* ========================================
+   5. Navigation Buttons (for Hotel Cards)
+======================================== */
+.navigation-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.navigation-buttons button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.navigation-buttons button:hover {
+    background-color: #0056b3;
+}
+
+/* ========================================
+   6. Responsive Adjustments
+======================================== */
+@media (max-width: 992px) {
+    .form-container {
+        flex-direction: column;
+    }
+
+    .input-group.hotels,
+    .input-group.dates,
+    .input-group.visitors {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .tab-indicator {
+        width: 30%;
+    }
+
+    .search-btn {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .tab {
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    .tab-indicator {
+        margin-top: -20px;
+    }
+
+    .hotel-card {
+        flex-direction: column;
+    }
+
+    .hotel-image {
+        width: 100%;
+        height: 250px;
+    }
+
+    .hotel-content {
+        padding: 20px;
+    }
+
+    .hotel-name {
+        font-size: 28px;
+    }
+
+    .price-section {
+        justify-content: flex-start;
+    }
+}
+
+
+.slide-3 {
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.payment-content {
+    margin-top: 30px;
+}
+
+.back-to-hotels {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+.booking-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    margin: 0 20px;
+}
+
+.form-section {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.form-title {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-size: 42px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-family: 'Playfair Display', serif;
+    color: #c9a55c;
+    font-size: 20px;
+}
+
+.required {
+    color: #c9a55c;
+}
+
+input {
+    background-color: #f8f7f2;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.hotel-section {
+    flex: 0 0 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hotel-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.hotel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hotel-name {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.price-tag {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.price-label {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-size: 24px;
+}
+
+.price-amount {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.booking-form input {
+    transition: all 0.3s ease;
+}
+
+.validate-button {
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+    background-color: #007BFF; /* initial color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.validate-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .booking-container {
+        flex-direction: column;
+    }
+    
+    .form-section {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+    
+    .hotel-section {
+        width: 100%;
+    }
+}
+
+
+
+#backToSearchBtn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#backToSearchBtn:hover {
+    background-color: #dcdcdc;
+}
+
+
+
+/* Hotel names in slide-2 (hotel cards) */
+.slide-2 .hotel-name {
+    color: black;
+}
+
+/* Price text in slide-2 (price amount and label) */
+.slide-2 .price-label,
+.slide-2 .price-amount {
+    color: black;
+}
+
+/* Hotel name in slide-3 (booking form) */
+.slide-3 .hotel-name {
+    color: black;
+}
+
+/* Price text in slide-3 (price label and amount) */
+.slide-3 .price-label,
+.slide-3 .price-amount {
+    color: black;
+}
+
+
+/* Default Validate button styles */
+.validate-button {
+    padding: 10px 20px;
+    background-color: #f0f0f0; /* Adjust to match your existing button styles */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect */
+.validate-button:hover {
+    background-color: #dcdcdc; /* Adjust to match your existing hover styles */
+}
+
+/* Validated state (green with animation) */
+.validate-button.validated {
+    background-color: #28a745; /* Green color */
+    color: white; /* White text for contrast */
+    animation: validateAnimation 0.4s ease;
+}
+
+/* Keyframes for the animation */
+@keyframes validateAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Slightly scale up */
+    }
+    100% {
+        transform: scale(1); /* Return to original size */
+    }
+}

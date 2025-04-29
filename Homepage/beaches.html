@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Beaches</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f0eee9;
+      font-family: 'Georgia', serif;
+    }
+
+    .hero-section {
+      background-image: url('beaches.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 60px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      height: 200px;
+    }
+
+    .title {
+      color: white;
+      font-size: 3.5rem;
+    }
+
+    .home-button {
+      background-color: #002f22;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 1.3rem;
+      margin-top: 10px;
+    }
+
+    .places-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-auto-rows: 250px;
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .place-link {
+      text-decoration: none;
+    }
+
+    .place-card {
+      background-size: cover;
+      background-position: center;
+      border-radius: 15px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      transition: transform 0.3s ease;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .place-card:hover {
+      transform: scale(1.03);
+    }
+
+    .place-label {
+      font-family: 'Arial Black', sans-serif;
+      font-size: 2rem;
+      color: white;
+      width: 100%;
+      text-align: left;
+      padding: 15px 20px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .tall {
+      grid-row: span 2;
+    }
+
+    .wide {
+      grid-column: span 2;
+    }
+
+    .see-more-image {
+      width: 120px;
+      height: 120px;
+      margin-top: 60px;
+      cursor: pointer;
+    }
+
+    /* Nouvelle classe pour images plus grandes */
+    .larger {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header class="hero-section">
+    <h1 class="title">Beaches</h1>
+    <a href="welcome.html" class="home-button">Home</a>
+  </header>
+
+  <main class="places-grid">
+    <a href="bizert.html" class="place-link tall">
+      <div class="place-card" style="background-image: url('bizert.jpg');">
+        <span class="place-label">BIZERT</span>
+      </div>
+    </a>
+    <a href="sousse.html" class="place-link wide">
+      <div class="place-card" style="background-image: url('sousse.png');">
+        <span class="place-label">SOUSSE</span>
+      </div>
+    </a>
+    <a href="mahdia.html" class="place-link">
+      <div class="place-card" style="background-image: url('djerba.jpg');">
+        <span class="place-label">MAHDIA</span>
+      </div>
+    </a>
+
+    <img src="more.png" alt="See More" class="see-more-image" id="moreButton" onclick="toggleInfo()">
+
+    <div id="hidden-places" style="display: none;">
+      <a href="monastir.html" class="place-link larger">
+        <div class="place-card" style="background-image: url('monastir.jpg');">
+          <span class="place-label">MONASTIR</span>
+        </div>
+      </a>
+      <a href="sidibousaid.html" class="place-link larger">
+        <div class="place-card" style="background-image: url('Sidibousaid.jpg');">
+          <span class="place-label">SIDI BOU SAID</span>
+        </div>
+      </a>
+    </div>
+
+  </main>
+
+  <script>
+    function toggleInfo() {
+      // Cacher le bouton +
+      var button = document.getElementById('moreButton');
+      button.style.display = "none";
+
+      // Afficher les nouvelles cartes
+      var hiddenPlaces = document.getElementById('hidden-places');
+      hiddenPlaces.style.display = "grid";
+    }
+  </script>
+
+</body>
+</html>

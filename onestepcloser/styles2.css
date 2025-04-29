@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hotel-card {
+    display: flex;
+    border: 2px solid #0a3b25;
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: white;
+    position: relative;
+}
+
+.hotel-image {
+    width: 380px;
+    height: 320px;
+    flex-shrink: 0;
+}
+
+.hotel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hotel-content {
+    flex-grow: 1;
+    padding: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.hotel-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #0a3b25;
+    margin-bottom: 10px;
+}
+
+.star-rating {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.star {
+    color: #ffc107;
+    font-size: 32px;
+    margin-right: 5px;
+}
+
+.price-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+.price-label {
+    font-size: 24px;
+    font-weight: 500;
+    margin-right: 20px;
+}
+
+.price-amount {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hotel-card {
+        flex-direction: column;
+    }
+    
+    .hotel-image {
+        width: 100%;
+        height: 250px;
+    }
+    
+    .hotel-content {
+        padding: 20px;
+    }
+    
+    .hotel-name {
+        font-size: 28px;
+    }
+    
+    .price-section {
+        justify-content: flex-start;
+    }
+
+    
+.navigation-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.navigation-buttons button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navigation-buttons button:hover {
+    background-color: #0056b3;
+}
+
+
+    
+    
+}

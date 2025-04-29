@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration</title>
+    <link rel="stylesheet" href="loginregister.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Login & Registration</h1>
+            <a href="../Homepage/welcome.html" class="home-button">Home</a>
+        </div>
+    </header>
+
+    <!-- Main Page Content -->
+    <div class="page-content">
+        <div class="container">
+            
+
+            <div class="form-box">
+                <!-- Login Section -->
+                <div class="login-section" id="loginSection">
+                    <h3>ALREADY HAVE AN ACCOUNT?</h3>
+                    <h2>LOGIN</h2>
+                    <form action="login.php" method="POST">
+                        <div class="input-box">
+                            <i class="fas fa-user"></i>
+                            <input type="text" name="username" placeholder="Username" required>
+                        </div>
+                        <div class="input-box">
+                            <i class="fas fa-key"></i>
+                            <input type="password" name="password" placeholder="Password" required>
+                        </div>
+                        <button class="btn" type="submit">LOGIN</button>
+                    </form>
+                </div>
+
+                <!-- Registration Section -->
+                <div class="register-section hidden" id="registerSection">
+                    <h3>DON'T HAVE AN ACCOUNT?</h3>
+                    <h2>REGISTER</h2>
+                    <form action="register.php" method="POST">
+                        <div class="input-box">
+                            <i class="fas fa-user-plus"></i>
+                            <input type="text" name="username" placeholder="Username" required>
+                        </div>
+                        <div class="input-box">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" name="password" placeholder="Password" required>
+                        </div>
+                        <div class="input-box">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" name="retype_password" placeholder="Retype Password" required>
+                        </div>
+                        <button class="btn" type="submit">REGISTER</button>
+                    </form>
+                </div>
+
+            </div>
+            <br>
+            <br>
+            
+            <div class="form-toggle">
+                <button id="showLogin" class="active">Login</button>
+                <button id="showRegister">Register</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="loginregister.js"></script>
+</body>
+</html>

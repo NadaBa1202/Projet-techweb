@@ -1,0 +1,162 @@
+/* General Styles */
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #042b21;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.header {
+    background-image: url('login.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 60px 40px;
+      height: 5px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content h1 {
+    font-size: 3em;
+    color: white;
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+}
+
+.home-button {
+    background-color: #00332e;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #005147;
+}
+
+/* Page Content */
+.page-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 150px); /* Leaves space for the header */
+}
+
+/* Container */
+.container {
+    text-align: center;
+}
+
+/* Toggle Buttons */
+.form-toggle {
+    margin-bottom: 20px;
+}
+
+.form-toggle button {
+    background-color: #00332e;
+    color: white;
+    font-size: 1.2em;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 0 5px;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.form-toggle button:hover {
+    background-color: #005147;
+}
+
+/* Active button */
+.form-toggle button.active {
+    background-color: white;
+    color: #00332e;
+}
+
+
+/* Form Box */
+.form-box {
+    display: flex;
+    background: #f8f4eb;
+    width: 350px;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px 20px;
+}
+
+/* Sections */
+.login-section, .register-section {
+    width: 100%;
+    text-align: center;
+}
+
+/* Titles inside Form */
+h3 {
+    font-size: 1em;
+    font-weight: bold;
+    color: #aa8b2f;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #00332e;
+}
+
+/* Input Boxes */
+.input-box {
+    background: #f8f4eb;
+    border: 2px solid #00332e;
+    padding: 10px;
+    margin: 10px auto;
+    width: 90%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    font-size: 1em;
+    outline: none;
+    background: transparent;
+}
+
+/* Buttons */
+.btn {
+    background: #042b21;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+/* Hidden class for toggling forms */
+.hidden {
+    display: none !important;
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Listings</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="hotel-card">
+            <div class="hotel-image">
+                <img src="img2.jpg" alt="Village Africa Jade Thalasso resort with water slides and swimming pool">
+            </div>
+            <div class="hotel-info">
+                <h2 class="hotel-name">Village Africa Jade Thalasso</h2>
+                <div class="star-rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <div class="price-section">
+                    <div class="price-label">PRICE :</div>
+                    <div class="price-amount">$500</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hotel-card">
+            <div class="hotel-image">
+                <img src="img3.jpg" alt="Le Sultan Hammemet beachfront resort with swimming pool and beach view">
+            </div>
+            <div class="hotel-info">
+                <h2 class="hotel-name">le sultan hammemet</h2>
+                <div class="star-rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <div class="price-section">
+                    <div class="price-label">PRICE :</div>
+                    <div class="price-amount">$1200</div>
+                </div>
+            </div>
+        </div>
+        <div class="hotel-card">
+            <div class="hotel-image">
+                <img src="img4.jpg" alt="Example Resort with pool and mountain view">
+            </div>
+            <div class="hotel-info">
+                <h2 class="hotel-name">Steigenberger Marhaba Thalasso</h2>
+                <div class="star-rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <div class="price-section">
+                    <div class="price-label">PRICE :</div>
+                    <div class="price-amount">$850</div>
+                </div>
+            </div>
+        </div>
+        <div class="hotel-card">
+            <div class="hotel-image">
+                <img src="img5.jpg" alt="Example Resort with pool and mountain view">
+            </div>
+            <div class="hotel-info">
+                <h2 class="hotel-name">Movenpick Resort & Marine Spa Sousse</h2>
+                <div class="star-rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <div class="price-section">
+                    <div class="price-label">PRICE :</div>
+                    <div class="price-amount">$900</div>
+                </div>
+            </div>
+        </div>
+        <div class="hotel-card">
+            <div class="hotel-image">
+                <img src="img6.jpg" alt="Example Resort with pool and mountain view">
+            </div>
+            <div class="hotel-info">
+                <h2 class="hotel-name">La Badira</h2>
+                <div class="star-rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <div class="price-section">
+                    <div class="price-label">PRICE :</div>
+                    <div class="price-amount">$15000</div>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+    
+        <!-- Add this inside the <body> at the end, just before </body> -->
+    <div class="navigation-buttons">
+        <button id="prevBtn">Previous</button>
+        <button id="nextBtn">Next</button>
+    </div>
+
+    <script>
+
+        const hotelCards = document.querySelectorAll('.hotel-card');
+        let currentIndex = 0;
+
+        function showCard(index) {
+            hotelCards.forEach((card, i) => {
+                card.style.display = i === index ? 'block' : 'none';
+                card.style.transition = 'all 0.5s ease'; // Smooth transition
+            });
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % hotelCards.length;
+            showCard(currentIndex);
+        });
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + hotelCards.length) % hotelCards.length;
+            showCard(currentIndex);
+        });
+
+    // Initialize
+        showCard(currentIndex);
+
+
+    </script>
+</body>
+</html>
